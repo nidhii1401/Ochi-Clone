@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className=" fixed z-[999] w-full px-20 py-8 font-['Neue Montreal'] flex justify-between items-center ">
+    <div className="w-full px-20 py-8 font-['Neue Montreal'] flex justify-between items-center">
         {/* Logo */}
       <div className="logo">
       <svg
@@ -38,7 +38,7 @@ const Navbar = () => {
       {/* Text on Navbar */}
       <div className="links flex  gap-10">
         {["Services" , "Our Work", "About Us", "Insights", "Contact us"].map((items,index) => (
-            <a key={index} className= {`text-md font-light ${index === 4 && "ml-32" }` }> {items} </a>
+            <a key={index} className= {`text-md font-light ${index === 4 && "ml-32"}` }> {items} </a>
         ))}
       </div>
 
