@@ -1,15 +1,31 @@
+import { motion } from "framer-motion";
 import React from "react";
 import { GoArrowUpRight } from "react-icons/go";
+import LocomotiveScroll from 'locomotive-scroll';
+
 
 const LandingPage = () => {
+
+  const scroll = new LocomotiveScroll();
   return (
-    <div className="landing-page w-full h-screen">
-      <div className="text-structure mt-20 px-20">
+    
+    <div data-scroll data-scroll-section data-scroll-speed="-0.3" className="landing-page w-full h-screen">
+
+      <div className="text-structure mt-30 px-20">
         {["We Create", "Eye-opening", "Presentations"].map((item, index) => {
           return (
-            <div className="masker bg-amber-300">
+            <div className="masker">
               <div className="w-fit flex">
-                {index === 1 && (<div className="w-[8vw] rounded-md h-[6vw] relative -bottom-[1.09vw] bg-red-400 mr-[1vw]"></div>) }
+                {index === 1 && (
+                  <motion.div
+                    initial={{ width: 0 }}
+                    animate={{ width: "8vw" }}
+                    transition={{ ease: [0.76, 0, 0.24, 1], duration: 1.5 }}
+                    className="w-[8vw] rounded-md h-[6vw] relative -bottom-[1.09vw] bg-cover bg-center bg-[url(https://ochi.design/wp-content/uploads/2022/04/content-image01.jpg)] mr-[1vw]"
+                  >
+                    {" "}
+                  </motion.div>
+                )}
                 <h1 className="heading uppercase text-[7.5vw] leading-[7vw] font-['Test Founders Grotesk X-Cond SmBd'] tracking-tighter font-bold">
                   {item}
                 </h1>
@@ -24,7 +40,7 @@ const LandingPage = () => {
           "For public and private companies",
           "From the first pitch of IPO",
         ].map((item, index) => {
-          return <p className="para">{item}</p>;
+          return <p className="para font-['Neue_Montreal'] ">{item}</p>;
         })}
 
         <div className="start-box flex items-center gap-3">
@@ -32,11 +48,11 @@ const LandingPage = () => {
             Start the Project
           </div>
           <div className="circle w-6 h-6 rounded-full border-[1px] border-t-gray-800 flex justify-center items-center">
-            {" "}
-            <GoArrowUpRight />{" "}
+            <GoArrowUpRight />
           </div>
         </div>
       </div>
+
     </div>
   );
 };

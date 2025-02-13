@@ -1,10 +1,18 @@
 import React from "react";
 
-const Navbar = () => {
+function Footer() {
   return (
-    <div className="fixed z-[999] w-full px-20 py-7 font-['Neue_Montreal'] flex justify-between items-center -mt-25 ">
-      {/* Logo */}
-      <div className="logo">
+    <div className="w-full h-screen p-20 flex gap-5 font-['Test Founders Grotesk X-Cond SmBd']">
+      <div className="w-1/2 h-full flex flex-col justify-between  ">
+        <div className="heading">
+          <h1 className="text-[8vw] font-semibold leading-none tracking-tighter -mb-5 uppercase ">
+            EYE
+          </h1>
+          <h1 className="text-[8vw] font-semibold leading-none tracking-tighter -mb-5 uppercase ">
+            OPENING
+          </h1>
+        </div>
+
         <svg
           width="72"
           height="30"
@@ -35,22 +43,56 @@ const Navbar = () => {
         </svg>
       </div>
 
-      {/* Text on Navbar */}
-      <div className="links flex gap-10">
-        {["Services", "Our Work", "About Us", "Insights", "Contact us"].map(
-          (items, index) => (
-            <a
-              key={index}
-              className={`text-lg font-light ${index === 4 && "ml-32"}`}
-            >
-              {" "}
-              {items}{" "}
-            </a>
-          )
-        )}
+      <div className="w-1/2 flex flex-col justify-between">
+        <h1 className="text-[6vw] font-semibold leading-none tracking-tighter -mb-5 uppercase ">
+          PRESENTATIONS
+        </h1>
+
+        <div className="dets mt-10 font-['Neue_Montreal']">
+          <h1 className="font-bold"> S:</h1>
+          {["Facebook", "Instagram", "Twitter", "Linkedin", "Behance"].map(
+            (items, index) => (
+              <a key={index} className="text-lg block ">
+                {" "}
+                {items}{" "}
+              </a>
+            )
+          )}
+        </div>
+
+        <div className="dets mt-10 font-['Neue_Montreal'] flex justify-between">
+          <div>
+            <h1 className="font-bold">L:</h1>
+            {["202-1965 W 4th Ave", "Vancouver, Canada"].map(
+              (items, index) => (
+                <a key={index} className="text-lg block ">
+                  {" "}
+                  {items}{" "}
+                </a>
+              )
+            )}
+          </div>
+
+          <div>
+            
+            <h1 className="font-bold"> M:</h1>
+            {["Home", "Services", "Our Work", "About Us", "Insights"].map(
+              (items, index) => (
+                <a key={index} className="text-lg block ">
+                  {" "}
+                  {items}{" "}
+                </a>
+              )
+            )}
+          </div>
+        </div>
+
+        <div className="dets mt-10  font-['Neue_Montreal']">
+          <a className="text-lg block ">hello@ochi.design</a>
+        </div>
       </div>
     </div>
   );
-};
+}
 
-export default Navbar;
+export default Footer;
