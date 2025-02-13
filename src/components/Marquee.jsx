@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { s } from "framer-motion/client";
 import React from "react";
 import LocomotiveScroll from 'locomotive-scroll';
 
